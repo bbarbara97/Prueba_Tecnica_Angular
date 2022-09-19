@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
-  roles: string | undefined;
 
   usernameView?: string;
 
@@ -32,11 +31,7 @@ export class LoginComponent implements OnInit {
       const user = this.tokenStorage.getUser();
       const token = this.tokenStorage.getToken();
       this.usernameView = JSON.stringify(user).replace(/['"]+/g, '');
-      this.roles = this.tokenStorage
-        .getRoles()
-        ?.toString()
-        .replace(/['"]+/g, '');
-      console.log('roles: ' + this.roles);
+
     }
   }
 
