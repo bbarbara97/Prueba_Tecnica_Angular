@@ -1,0 +1,21 @@
+<div class="container">
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Búsqueda por nombre" [(ngModel)]="name" />
+        <div class="input-group-append">
+            <button class="btn bt-outline-secondary" type="button" (click)="searchName()">Search</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col my-5" *ngFor="let art of pelicula">
+            <div class="card" style="width: 18rem;">
+                <img src="https://image.tmdb.org/t/p/original{{art.poster_path}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{art.original_title}}</h5>
+                    <a routerLink="/movie/{{art.id}}" class="btn btn-warning">See more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

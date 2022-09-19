@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pruebatecnica';
+
+  constructor(private tokenStrogateService: TokenStorageService) {}
+
+  logout(): void {
+    this.tokenStrogateService.signOut();
+    window.location.reload();
+  }
 }
